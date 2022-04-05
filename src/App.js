@@ -11,7 +11,7 @@ function App() {
 
       {/* container is a bootstrap class, without this the textform was not looking good */}
       <div className='container'>
-        <TextForm heading="Enter your text to analyze"/>
+        <TextForm heading="Enter below your text to analyze"/>
       </div>
 
 
