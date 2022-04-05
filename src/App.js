@@ -7,8 +7,11 @@ function App() {
     <>
       {/* passing props to Navbar */}
       <Navbar title="Textutils"/>
+
+
+      {/* container is a bootstrap class, without this the textform was not looking good */}
       <div className='container'>
-        <TextForm/>
+        <TextForm heading="Enter your text to analyze"/>
       </div>
 
 
