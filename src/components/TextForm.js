@@ -66,23 +66,23 @@ export default function TextForm(props) {
   }
   return (
     <>
-      <div className='container'>
+      <div className={`container text-${props.mode === 'light' ? 'dark': 'light'}`}>
         <h1>{props.heading}</h1>
         <div className="mb-3">
-          <textarea className="form-control" value={text} onChange={handleOnChage} id="myBox" placeholder='Enter your text here' rows="8"></textarea>
+          <textarea className="form-control" value={text} onChange={handleOnChage} id="myBox" style={{backgroundColor: props.mode === 'light' ? 'white' : '#04060d', color: props.mode === 'light' ? 'black' : 'white'}} placeholder='Enter your text here' rows="8"></textarea>
         </div>
 
-        <button className='btn btn-danger mx-2' onClick={handleClearClick}>Clear Text</button>
         <button className='btn btn-primary mx-2' onClick={handleUpClick}>Convert to Uppercase</button>
         <button className='btn btn-primary mx-2' onClick={handleLoClick}>Convert to Lowercase</button>
         <button className='btn btn-primary mx-2' onClick={handleInverseClick}>Convert to InVeRsE CaSe</button>
         <button className='btn btn-primary mx-2' onClick={handleCopyClick}>Copy to Clipboard</button>
         <button className='btn btn-primary mx-2' onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+        <button className='btn btn-danger mx-2' onClick={handleClearClick}>Clear Text</button>
       </div>
 
 
 
-      <div className='container mt-3'>
+      <div className={`container mt-3 text-${props.mode === 'light' ? 'dark': 'light'}`}>
         <h2>Your text summary</h2>
         <p>{text.split(" ").length-1} words and {text.length} character</p>
         {/* text.split(" ") gives the arrays of words which are separated at space */}
@@ -92,7 +92,7 @@ export default function TextForm(props) {
         <p>{0.008 * (text.split(" ").length-1)} minutes to read</p>
 
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length > 0 ? text : "Enter text in above box to preview here"}</p>
       </div>
 
 
