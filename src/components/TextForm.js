@@ -10,6 +10,7 @@ export default function TextForm(props) {
   const handleUpClick = () => {
     // console.log("Up clicked");
     setText(text.toUpperCase());
+    console.log(text.split(" "));
   }
 
   const handleLoClick = () => {
@@ -30,10 +31,10 @@ export default function TextForm(props) {
     while (i < text.length) {
       var n = text.charAt(i);
         if (i%2 === 0) {
-            // *Call* toLowerCase
+            // *Call* toupperCase
             n = n.toUpperCase();
         } else {
-            // *Call* toUpperCase
+            // *Call* tolowerCase
             n = n.toLowerCase();
         }
       i++;
@@ -42,6 +43,10 @@ export default function TextForm(props) {
 
     setText(str);
   }
+
+
+
+
 
 
 
@@ -57,8 +62,8 @@ export default function TextForm(props) {
           <textarea className="form-control" value={text} onChange={handleOnChage} id="exampleFormControlTextarea1" placeholder='Enter your text here' rows="8"></textarea>
         </div>
 
-        <button className='btn btn-primary mx-2' onClick={handleUpClick}>Convert to Uppercase</button>
-        <button className='btn btn-primary mx-2' onClick={handleLoClick}>Convert to Lowercase</button>
+        <button className='btn btn-primary mx-2' onClick={handleUpClick}>Uppercase</button>
+        <button className='btn btn-primary mx-2' onClick={handleLoClick}>Lowercase</button>
         <button className='btn btn-primary mx-2' onClick={handleClearClick}>Clear</button>
         <button className='btn btn-primary mx-2' onClick={handleInverseClick}>InVeRsE CaSe</button>
       </div>
